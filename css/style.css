@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+#output {
+background-image: linear-gradient(to top left,rgb(0, 0, 0),rgb(128, 126, 126));
+border: solid ;
+border-color:rgba(243, 233, 217, 0.925);
+border-width: 20px 10px 25px 10px;
+border-radius: 0.5em;
+box-shadow: inset 4px 4px;
+max-width: 95%;
+}
+#result_text{
+    color:blanchedalmond;
+    margin-bottom: 20px;
+}
+body{
+  /* background-color: #a0dee9; */
+  background-image: linear-gradient(to left,#a0dee9,#61cfe2);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  margin : 5px 15px;
+  min-width: min-content;
+}
+#result-text{
+  font-size: xx-large;
+}
+.sameLine,#first_run,#res_container{
+  display:inline-block;
+  vertical-align: middle;
+}
+#myList{
+  min-height:30px;
+  min-width:80px;
+  font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.4em;
+}
+#size,#dpi,#width_value,#length_value{
+  min-height:24px;
+  min-width:5ch;
+  font-size: 18px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.4em;
+  width:5ch;
+}
+.button {
+  background-image: linear-gradient(to right, #040075 0%,#3c39a0 0%, #585aee 100%);
+  border: 0.1px solid;
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  font-size: 17px;
+  margin:0 auto; text-align: center;
+  width: fit-content;
+}
+.caution {
+  margin: 10px 0 5px 0;
+  padding:1px;
+  background-color: #e4d3a6;
+  color: black;
+  border-left: 6px solid #fd2020;
+  font-size: 15px;
+  font-style:normal;
+  text-align: auto;
+}
+#content-container{
+  max-height: 100%;
+}
+.navbar-text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family:fantasy;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+.centerScreen{
+  margin: 0 auto;
+}
+#width_value,#length_value{
+  min-width: 6ch;
+}
+img{
+  border-right:3px solid rgb(197, 197, 197);
+  margin:0 15px 0 6px;
+  padding-right: 6px;
+}
+
+hr {
+  border-color: #4A262F;
+  border-width: 1px;
+}
+
