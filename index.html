@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[screendpi.info] Check Your Display DPI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/functionality.js" defer></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .row.content {height: 450px}
+    .sidenav {
+      padding-top: 20px;
+      background-color: rgba(184, 176, 176, 0);
+      height: 100%;
+    }
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 0px;
+      margin:auto;
+      bottom:0;
+    }
+    @media only screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .centerScreen{
+            width: 100%;    
+      }
+      #op1button,#op2button{
+        margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+      <p class="navbar-text"><b>Know Your DPI</b></p>
+      <img  src="assets/logotemp.png" alt="check screen dpi" style="height:50px;width: 60px;">
+      
+    </div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>                        
+    </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html">Project Link</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p id="date" style="color: white;"></p></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var today = new Date();
+  var Year = today.getFullYear();
+  let month = months[today.getMonth()];
+  document.getElementById("date").innerHTML = month+', '+Year;
+  </script>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav" style="background-color: rgb(248, 227, 227);margin-top: 10px;height: 400px;">
+      <p>Resolution is auto detected. Enter screen dimension to find DPI or vice-versa!</p>
+      <hr>
+           <h4><u>Articles</u></h4> 
+            <ul>
+                <li><a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/">PPI vs. DPI: what’s the difference?</a></li>
+                <li><a href="http://resources.printhandbook.com/pages/dpi-for-printing.php">What's the correct DPI for printing?</a></li>
+                <li><a href="https://clarkvision.com/imagedetail/eye-resolution.html">Resolution of Human Eye | ClarkVision</a></li>
+            </ul>
+      <!-- <p><a href="#">check screen dpi</a></p>
+      <p><a href="#">display dpi</a></p> -->
+    </div>
+    <div class="col-sm-8 text-center"> 
+        <br><br>
+            <strong id='first_run' style="font-size:20px;">Resolution is : </strong>
+            <div id="res_container" > <input type="text" id="width_value" oninput="resolution();"> <strong style="font-size:20px;"> x</strong> <input type="text" id="length_value" oninput="resolution();"></div>
+            <div id="box-border" style="border: 0.4px solid;padding: 20px 0px 20px 0px; margin:20px 0 20px 0;justify-content: center;position:relative;width:100%;">
+            
+              <div id="main" style="padding-bottom: 20px;">
+                ----
+            </div>
+            <div id="top" class="text-center" style="display:inline-block;">
+                <div id='op1' style="display:none;" ><strong style="font-size:20px;">Size:</strong>
+                    <select id = "myList" class='sameLine' onchange = "size2dpi();" >  <!--can be made hoverable-->
+                        <option> Diagonal </option>  
+                        <option> Width </option>  
+                        <option> Height </option>  
+                        </select>  
+                    <input type="text" class='sameLine' id="size" placeholder="size" value=15.6 oninput="size2dpi()"><br>
+                </div>
+                <div id='op2' style="display:none;" >
+                  <strong style="font-size:20px;">DPI # </strong> <input type="text" id="dpi" placeholder="dpi" value=75  oninput="dpi2size()"><br>
+                </div>
+            </div>
+            <div class="centerScreen" >
+            <div id="output" style="position:relative;margin: 0 auto;" >
+            <div style="margin:0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);"><b id="result_text" style="width:100%; text-align: center; font-weight: bold; font-style: italic;font-size: 20px;"></b>
+                </div>
+            </div>
+        </div>
+            </div>
+            <button onclick="show('op1')" id='op1button' class="button" style="display:none;">Go Back!</button>
+            <button onclick="show('op2')" id='op2button' class="button">Don't know size? Click for DPI &#8660; SIZE </button>
+    </div>
+    <div class="col-sm-2 sidenav" style="background-color: rgba(184, 176, 176, 0);">
+      <div class="alert alert-danger">
+        <p><em>Display by pixel density</em></p>
+      </div>
+      <div class="alert alert-danger">
+        <p><em>DPI converter</em></p>
+      </div>
+      <div class="alert alert-danger">
+        <p><em>1920x1080 dpi android</em></p>
+      </div>
+      <div class="alert alert-danger">
+        <p><em>Find monitor DPI Windows 10</em></p>
+      </div>
+      <div class="alert alert-danger">
+        <p><em>convert ppi to pixels & mm,cm,inches</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid text-left caution" style="position: relative;height:fit-content;margin-top: 90px;">
+    <blockquote style="font-size:medium;">
+    <strong>Note!</strong> For accurate results, zoom level in your browser must be set to 100% . We take no responsibility/warranty on the accuracy of results obtained from the use of this service.
+  </blockquote>
+    &copy;2022 <em>Souvik <em>(All kinds of query/suggestion are welcome, also for contributing to the project write to <a href = "mailto: screendpi.info@gmail.com">screendpi.info@gmail.com</a>)</em></em>
+</footer>
+</body>
+</html>

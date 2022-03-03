@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[screendpi.info]Contact Info</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+            <p class="navbar-text"><b>Know Your DPI</b></p>
+            <img  src="logotemp.png" alt="check screen dpi" style="height:50px;width: 60px;">
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Project Link</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><p id="date" style="color: white;"></p></li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+      <script>
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var today = new Date();
+        var Year = today.getFullYear();
+        let month = months[today.getMonth()];
+        document.getElementById("date").innerHTML = month+', '+Year;
+        </script>
+<div style="text-align: center;font-size: 30px;">screendpi.info@gmail.com</div>
+</body>
+
+</html>
