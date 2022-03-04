@@ -18,6 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="js/functionality.js" defer></script>
+  <link href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
   <style>
     .navbar {
       margin-bottom: 0;
@@ -56,8 +57,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <div class="navbar-brand">
-      <p class="navbar-text"><b>Know Your DPI</b></p>
-      <img  src="assets/logotemp.png" alt="check screen dpi" style="height:50px;width: 60px;">
+      <p class="navbar-text" ><b>Know Your DPI&#129321;</b></p>
+      <img  src="assets/logotemp.png" alt="check screen dpi" style="height:50px; width: 60px;">
       
     </div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -67,11 +68,12 @@
     </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
+      <ul class="nav navbar-nav" style="font-family: Capriola;">
+        <li class="active"><a href="index.html">&#127968;Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="project.html">Project Link</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><p id="date" style="color: white;"></p></li>
@@ -86,12 +88,12 @@
   let month = months[today.getMonth()];
   document.getElementById("date").innerHTML = month+', '+Year;
   </script>
-<div class="container-fluid text-center">    
+<div class="container-fluid ">    
   <div class="row content">
-    <div class="col-sm-2 sidenav" style="background-color: rgb(248, 227, 227);margin-top: 10px;height: 400px;">
-      <p>Resolution is auto detected. Enter screen dimension to find DPI or vice-versa!</p>
+    <div class="col-sm-2 sidenav" style="background-color:rgb(248, 227, 227);margin-top: 10px;max-height:300px;border-radius: 4px;overflow-y:auto;">
+      <p style="color:rgb(136, 35, 17) ;">Resolution is auto detected. Enter screen dimension to find DPI or vice-versa!</p>
       <hr>
-           <h4><u>Articles</u></h4> 
+           <h4 style="text-align: center;"><u>Articles</u></h4> 
             <ul>
                 <li><a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/">PPI vs. DPI: what’s the difference?</a></li>
                 <li><a href="http://resources.printhandbook.com/pages/dpi-for-printing.php">What's the correct DPI for printing?</a></li>
@@ -104,13 +106,13 @@
         <br><br>
             <strong id='first_run' style="font-size:20px;">Resolution is : </strong>
             <div id="res_container" > <input type="text" id="width_value" oninput="resolution();"> <strong style="font-size:20px;"> x</strong> <input type="text" id="length_value" oninput="resolution();"></div>
-            <div id="box-border" style="border: 0.4px solid;padding: 20px 0px 20px 0px; margin:20px 0 20px 0;justify-content: center;position:relative;width:100%;">
+            <div id="box-border" style="border: 0.4px solid;padding: 20px 0px 20px 0px; margin:20px 0 20px 0;border-radius: 20px;justify-content: center;position:relative;width:100%;">
             
               <div id="main" style="padding-bottom: 20px;">
                 ----
             </div>
             <div id="top" class="text-center" style="display:inline-block;">
-                <div id='op1' style="display:none;" ><strong style="font-size:20px;">Size:</strong>
+                <div id='op1' style="display:none;" ><strong style="font-size:20px;">Enter Size:</strong>
                     <select id = "myList" class='sameLine' onchange = "size2dpi();" >  <!--can be made hoverable-->
                         <option> Diagonal </option>  
                         <option> Width </option>  
@@ -119,7 +121,7 @@
                     <input type="text" class='sameLine' id="size" placeholder="size" value=15.6 oninput="size2dpi()"><br>
                 </div>
                 <div id='op2' style="display:none;" >
-                  <strong style="font-size:20px;">DPI # </strong> <input type="text" id="dpi" placeholder="dpi" value=75  oninput="dpi2size()"><br>
+                  <strong style="font-size:20px;">Enter Display DPI # </strong> <input type="text" id="dpi" placeholder="dpi" value=75  oninput="dpi2size()"><br>
                 </div>
             </div>
             <div class="centerScreen" >
@@ -142,7 +144,7 @@
         <p><em>Display by pixel density</em></p>
       </div>
       <div class="alert alert-danger">
-        <p><em>DPI converter</em></p>
+        <p><em>DPI calculator</em></p>
       </div>
       <div class="alert alert-danger">
         <p><em>1920x1080 dpi android</em></p>
@@ -151,7 +153,7 @@
         <p><em>Find monitor DPI Windows 10</em></p>
       </div>
       <div class="alert alert-danger">
-        <p><em>convert ppi to pixels & mm,cm,inches</em></p>
+        <p><em>Pixel converter</em></p>
       </div>
     </div>
   </div>
